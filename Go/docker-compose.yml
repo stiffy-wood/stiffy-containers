@@ -1,0 +1,14 @@
+services:
+  goanchor:
+    build:
+      context: "./goanchor"
+      args:
+        NVIM_VERSION: "v0.10.0"
+    volumes:
+      - repos:/repos
+    entrypoint: ["/usr/local/bin/entrypoint.sh"]
+    stdin_open: true
+    tty: true
+
+volumes:
+  repos:
